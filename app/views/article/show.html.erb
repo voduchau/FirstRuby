@@ -1,0 +1,18 @@
+<%= @article.title%>
+<br/>
+<%= @article.text%>
+<br/>
+<p id="notice">
+<%= flash[:notice] %>
+<%@article.comment.each do |item| %>
+  <strong>commenter:</strong>
+    <%=item.commenter%>
+  <br/>
+  <strong>Text:</strong>
+    <%= item.body %>
+<% end %>
+<br/>
+<div id="div1">this is div 1111111111111111111</div>
+<%= render "comment/form"%>
+<%= link_to "back", root_path%>
+<%= stylesheet_link_tag "testcss.css" %>

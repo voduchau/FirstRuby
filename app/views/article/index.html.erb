@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th>create at</th>
+        <th>Action</th>
+  </tr>
+        <% @article.each do |item| %>
+    <tr>
+        <td><%= item.title%></td>
+        <td><%= item.text%></td>
+        <td><%= item.created_at%></td>
+       <td> <%= link_to "delete", article_url(item.id),method: :delete, 
+        data: {
+            confirm: "delete item ?"
+        }
+        %>
+        <%= link_to "show", article_path(item.id) %>
+        <%= link_to "edit", edit_article_path(item.id) %>
+        </td>
+    </tr>
+<% end %>
+</table>
+<%= link_to "create",new_article_path %>

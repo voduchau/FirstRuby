@@ -1,0 +1,15 @@
+<%= form_with scope: :article, url:article_path,method: 'put', local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, value: @article.title, disabled: true %>
+  </p>
+ 
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
